@@ -39,4 +39,22 @@ function randomNumber(num) {
   return Math.random() * num;
 }
 
-console.log(parseInt(randomNumber(5)));
+const numStars = 100; // Adjust the number of stars displayed
+const starContainer = document.querySelector('.background');
+
+// a function generates a random position for the stars
+function getRandomPosition() {
+  const x = (window.innerWidth - 20) * Math.random();
+  const y = (window.innerHeight - 20) * Math.random();
+  return [y, x];
+}
+
+// Create and position the stars
+for ( let i = 0; i < numStars; i++) {
+  let star = document.createElement('div');
+  star.classList.add('star');
+  starContainer.appendChild(star);
+
+  const xy = getRandomPosition();
+  star.style.cssText = `animation-name: twinkle; position: absolute; top: ${xy[0]}px; left: ${xy[1]}px; background-color: white; width: 2px; height: 2px; border-raduis: 50%; box-shadow: -4px 2px 147px 110px rgba(0,0,0,0.47); -webkit-box-shadow: -4px 2px 147px 110px rgba(0,0,0,0.47); -moz-box-shadow: -4px 2px 147px 110px rgba(0,0,0,0.47);`;
+}
