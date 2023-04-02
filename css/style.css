@@ -1,0 +1,289 @@
+html {
+  scroll-behavior: smooth;
+  transition-duration: .3s;
+}
+body {
+  font-family: 'Roboto Mono', monospace;
+  background-color: black;
+  color: white;
+}
+:root {
+  --white: #fff;
+  --black: #000;
+  --gray: #8b8b8b;
+  --highlight: #e5ffc3;
+  --red: #ff9067;
+  --green: #24d05a;
+  --pink: #ff5e9e;
+  --blue: #2bb1ff;
+  --yellow: #e9c257;
+  --brown: #f79d65;
+  --animation: cubic-bezier(0, 1.37, 0, 1.37);
+}
+:selection {
+  color: black;
+  background-color: white;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #1a202c;
+  padding: 30px 20px 40px 30px;
+  border-radius: 20px;
+  transition: .3s;
+}
+@media (max-width: 767px) {
+  .container {
+    margin: 0;
+  }
+  .container .header .name p, .name h1 {
+    text-align: center;
+  }
+  .container .header img {
+    width: 250px;
+    height: 250px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 800px;
+    /* padding-left: 15px;
+    padding-right: 15px; */
+  }
+}
+/* meduim */
+@media (min-width: 992px) {
+  .container {
+    width: 800px;
+  }
+}
+/* large */
+@media (min-width: 1200px) {
+  .container {
+    width: 700px;
+  }
+}
+/* header section */
+.header {
+  display: flex;
+  /* margin-top: 70px; */
+  align-items: center;
+  margin-bottom: 30px;
+  justify-content: space-evenly;
+}
+@media (max-width: 767px) {
+  .header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+}
+.header .name {
+  width: 60%;
+  height: 60%;
+  text-transform: capitalize;
+}
+.header .name h1 {
+  font-size: 40px;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 5px;
+}
+.header .name p {
+  color: grey;
+  font-size: 25px;
+  margin: 0;
+  line-height: 1.4;
+}
+.header img {
+  width: 200px;
+  height: 200px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-position: 100px;
+}
+/* navigation */
+.container .navigation nav {
+  text-align: center;
+  font-size: 18px;
+  margin: 20px 0;
+}
+.container .navigation nav a:first-child {
+  animation-name: colored;
+}
+.container .navigation nav a:first-child:hover {
+  animation-name: idk;
+}
+.container .navigation nav a:nth-child(2) {
+  animation-name: hmm;
+}
+.container .navigation nav a:nth-child(2):hover {
+  animation-name: shit;
+}
+.container .navigation nav a:nth-child(3) {
+  animation-name: shit;
+}
+.container .navigation nav a:nth-child(3):hover {
+  animation-name: hmm;
+}
+.container .navigation nav a:last-child {
+  animation-name: idk;
+}
+.container .navigation nav a:last-child:hover {
+  animation-name: colored;
+}
+.container .navigation nav a {
+  animation-duration: 20s;
+  animation-timing-function: var(--animation);
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  font-size: 18px;
+}
+.container .navigation nav a:hover {
+  animation-duration: 20s;
+  animation-timing-function: var(--animation);
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  font-weight: bold;
+}
+@keyframes colored {
+  0% {
+    color: var(--brown);
+  }
+  20% {
+    color: var(--blue);
+  }
+  40% {
+    color: var(--green);
+  }
+  60% {
+    color: var(--pink);
+  }
+  80% {
+    color: var(--red);
+  }
+  100% {
+    color: var(--yellow);
+  }
+}
+@keyframes idk {
+  0% {
+    color: var(--yellow);
+  }
+  20% {
+    color: var(--red);
+  }
+  40% {
+    color: var(--pink);
+  }
+  60% {
+    color: var(--green);
+  }
+  80% {
+    color: var(--blue);
+  }
+  100% {
+    color: var(--brown);
+  }
+}
+@keyframes hmm {
+  0% {
+    color: var(--pink);
+  }
+  20% {
+    color: var(--red);
+  }
+  40% {
+    color: var(--yellow);
+  }
+  60% {
+    color: var(--brown);
+  }
+  80% {
+    color: var(--blue);
+  }
+  100% {
+    color: var(--green);
+  }
+}
+@keyframes shit {
+  0% {
+    color: var(--yellow);
+  }
+  20% {
+    color: var(--pink);
+  }
+  40% {
+    color: var(--blue);
+  }
+  60% {
+    color: var(--red);
+  }
+  80% {
+    color: var(--green);
+  }
+  100% {
+    color: var(--brown);
+  }
+}
+/* main-section */
+.hidden {
+  display: none;
+}
+.container .main-section {
+  margin-top: 25px;
+}
+.container .main-section button {
+  padding: 7px 30px 4px;
+  font-weight: bold;
+  border-radius: 30px;
+  background-color: transparent;
+  color: var(--gray);
+  border: solid 2px var(--gray);
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: .5s;
+}
+.container .main-section p {
+  line-height: 1.8;
+}
+.container .main-section p > a {
+  animation: hmm;
+}
+.container .main-section p > a, .container .main-section p > a:hover {
+  animation-duration: 20s;
+  animation-timing-function: var(--animation);
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+.container .main-section p > a:hover {
+  animation-name: idk;
+  font-weight: 500;
+}
+.container .footer {
+  margin-top: 40px;
+}
+.container .footer p a {
+  color: #2bb1ff;
+  animation-name: shit;
+  animation-duration: 20s;
+  animation-timing-function: var(--animation);
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+.container .footer p a:hover {
+  animation: idk;
+  animation-duration: 20s;
+  animation-timing-function: var(--animation);
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  font-weight: bold;
+}
